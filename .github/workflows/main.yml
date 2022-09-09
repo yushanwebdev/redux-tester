@@ -24,4 +24,4 @@ jobs:
      
      steps:
       - name: Linting
-        run: npm run linting
+        run: npm run lint
