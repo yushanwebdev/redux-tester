@@ -20,5 +20,5 @@ jobs:
       
       - name: Validate
         run: |
-          yarn run lint
-          yarn run check-types
+          npm run lint
+          npm run check-types
