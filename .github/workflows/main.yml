@@ -10,7 +10,6 @@ on:
 jobs:
   linting:
     runs-on: ubuntu-latest
-    needs: job1
 
     steps:
       - uses: actions/hello-world-composite-action@v1
