@@ -17,19 +17,8 @@ jobs:
       
       - name: Install Packages
       - run: npm install
-        
-  lint:
-    name: Lint
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:
-      - run: yarn run lint
-    
-  check_types:
-    name: Check Types
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:
-      - run: yarn run check-types
+      
+      - name: Validate
+        run: |
+          yarn run lint
+          yarn run check-types
