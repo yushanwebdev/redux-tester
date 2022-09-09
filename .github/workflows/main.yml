@@ -8,10 +8,26 @@ on:
     types: [opened, edited, reopened, synchronize]
 
 jobs:
-  linting:
+  Linting:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ../actions/action-a
+      - uses: actions/checkout@v3
+
+      - name: Install Packages
+        run: npm install
+
       - name: Linting
         run: npm run lint
+
+  Check Types:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Check Typing
+        run: npm run check-types
