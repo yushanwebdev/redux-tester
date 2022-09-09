@@ -12,17 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-          
-      - name: Install packages
-        run: yarn install
+      - uses: actions/checkout@v3  
+      - run: yarn install
         
   lint:
     name: Lint
     needs: build
-    run: yarn run lint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: yarn run lint
     
   check_types:
     name: Check Types
     needs: build
-    run: yarn run check-types
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: yarn run check-types
