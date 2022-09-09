@@ -10,7 +10,7 @@ import {
   selectCount,
 } from "./counterSlice";
 
-export default function Counter(): JSX.Element {
+export default function Counter({ componentID }): JSX.Element {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState("2");
@@ -19,7 +19,7 @@ export default function Counter(): JSX.Element {
 
   return (
     <div>
-      <div className="flex w-min px-4 py-2 rounded-lg shadow-md items-center justify-center gap-4 bg-gray-400 mx-auto mt-8">
+      <div className="flex items-center justify-center gap-4 px-4 py-2 mx-auto mt-8 bg-gray-400 rounded-lg shadow-md w-min">
         <button
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
@@ -27,7 +27,7 @@ export default function Counter(): JSX.Element {
         >
           -
         </button>
-        <span className="bg-gray-200 text-gray-600 px-8 py-2 text-3xl rounded-md shadow-inner">
+        <span className="px-8 py-2 text-3xl text-gray-600 bg-gray-200 rounded-md shadow-inner">
           {count}
         </span>
         <button
@@ -38,27 +38,27 @@ export default function Counter(): JSX.Element {
           +
         </button>
       </div>
-      <div className="flex w-max px-4 py-2 rounded-lg shadow-md items-center justify-center gap-4 bg-gray-400 mx-auto mt-8">
+      <div className="flex items-center justify-center gap-4 px-4 py-2 mx-auto mt-8 bg-gray-400 rounded-lg shadow-md w-max">
         <input
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
-          className="bg-gray-200 px-4 py-2 w-12 text-gray-600 rounded-sm text-center outline-none focus:outline-none focus:ring-2 ring-purple-600"
+          className="w-12 px-4 py-2 text-center text-gray-600 bg-gray-200 rounded-sm outline-none focus:outline-none focus:ring-2 ring-purple-600"
         />
         <button
-          className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
+          className="px-4 py-1 text-white bg-purple-600 rounded-md hover:bg-purple-700"
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
         </button>
         <button
-          className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
+          className="px-4 py-1 text-white bg-purple-600 rounded-md hover:bg-purple-700"
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
           Add Async
         </button>
         <button
-          className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
+          className="px-4 py-1 text-white bg-purple-600 rounded-md hover:bg-purple-700"
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
