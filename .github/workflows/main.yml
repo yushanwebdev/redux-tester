@@ -17,11 +17,6 @@ jobs:
       
       - name: Install Packages
         run: npm install
-      
-      - name: Validate
-        run: |
-          npm run lint
-          npm run check-types
           
   lint:
      runs-on: ubuntu-latest
